@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <div>
-      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE 1</p>
       <p>YOU ARE VISITING HOME PAGE</p>
       <p>YOU ARE VISITING HOME PAGE</p>
       <p>YOU ARE VISITING HOME PAGE</p>

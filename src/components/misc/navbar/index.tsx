@@ -23,7 +23,7 @@ export default async function Navbar() {
 
   return (
     <>
-      <div className="hidden md:flex h-16 items-center justify-between shadow px-6">
+      <div className="hidden md:flex h-16 bg-white items-center justify-between shadow px-6 fixed w-full">
         <Link href={ROUTES.home}>
           <h1 className="text-primary font-bold text-2xl">{APP_NAME}</h1>
         </Link>

@@ -2,7 +2,7 @@ import { auth } from "@/auth";
 import ROUTES from "./lib/constants/routes";
 import { NextResponse } from "next/server";
 
-const publicRoutes = [ROUTES.signin, ROUTES.signup, ROUTES.welcome];
+const publicRoutes = [ROUTES.signin, ROUTES.signup, ROUTES.root];
 
 export default auth((req) => {
   if (req.nextUrl.pathname.startsWith("/_next")) {
