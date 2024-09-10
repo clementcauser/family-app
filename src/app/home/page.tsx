@@ -1,3 +1,32 @@
 export default function Page() {
-  return <main>YOU ARE VISITING HOME PAGE</main>;
+  return (
+    <div>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+      <p>YOU ARE VISITING HOME PAGE</p>
+    </div>
+  );
 }
