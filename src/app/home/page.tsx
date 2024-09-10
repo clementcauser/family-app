@@ -1,32 +1,13 @@
-export default function Page() {
+import { auth } from "@/auth";
+import HomeTasksList from "@/components/misc/home-tasks-list";
+
+export default async function Page() {
+  const session = await auth();
+
   return (
     <div>
-      <p>YOU ARE VISITING HOME PAGE 1</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
-      <p>YOU ARE VISITING HOME PAGE</p>
+      <h1 className="text-2xl">Bonjour {session?.user.name}</h1>
+      <HomeTasksList profileId={session?.user.id} />
     </div>
   );
 }

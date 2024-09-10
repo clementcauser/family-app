@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Profile } from "@prisma/client";
-import { getAllInvitationsFromProfileAction } from "./actions";
 import InvitationsListItem from "./invitations-list-item";
+import { getAllInvitationsFromProfileAction } from "@/lib/actions/invitations";
 
 interface Props {
   profileId: Profile["id"];

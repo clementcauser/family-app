@@ -3,10 +3,10 @@ import CreateFamilyCard from "./create-family-card";
 import CreateFamilyForm from "./create-family-form";
 import InvitationsList from "./invitations-list";
 import { auth, signOut } from "@/auth";
-import { checkIfProfileHasFamilyAction } from "./actions";
 import { redirect } from "next/navigation";
 import ROUTES from "@/lib/constants/routes";
 import { Profile } from "@prisma/client";
+import { checkIfProfileHasFamilyAction } from "@/lib/actions/families";
 
 // TODO: improve loading display
 export default async function Page() {

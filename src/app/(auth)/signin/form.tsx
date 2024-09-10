@@ -12,12 +12,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { signInWithCredentialsAction } from "@/lib/actions/auth";
 import { SigninFormSchema } from "@/lib/validation/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAction } from "next-safe-action/hooks";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { signInWithCredentialsAction } from "./actions";
 
 type FormValues = z.infer<typeof SigninFormSchema>;
 

@@ -15,9 +15,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useAction } from "next-safe-action/hooks";
-import { signUpWithCredentialsAction } from "./actions";
 import { useToast } from "@/hooks/use-toast";
 import { SignupFormSchema } from "@/lib/validation/auth";
+import { signUpWithCredentialsAction } from "@/lib/actions/auth";
 
 type FormValues = z.infer<typeof SignupFormSchema>;
 

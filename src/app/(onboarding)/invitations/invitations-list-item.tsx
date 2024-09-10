@@ -1,13 +1,14 @@
 "use client";
 
 import { Family, Invitation, Profile } from "@prisma/client";
-import { addFamilyMemberByInvitationAction, deleteInvitation } from "./actions";
 import { CheckIcon, Cross1Icon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import { useAction } from "next-safe-action/hooks";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import ROUTES from "@/lib/constants/routes";
+import { addFamilyMemberByInvitationAction } from "@/lib/actions/families";
+import { deleteInvitation } from "@/lib/actions/invitations";
 
 interface AcceptInvitationButtonProps {
   invitationId: string;

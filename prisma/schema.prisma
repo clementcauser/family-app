@@ -73,9 +73,10 @@ model Profile {
   invitations        Invitation[] @relation("invitations")
   createdInvitations Invitation[] @relation("created_by")
   ownedFamily        Family?      @relation("owner")
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now()) @updatedAt
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @default(now()) @updatedAt
+  tasks              Task[]
+  tasksList          TasksList[]  @relation("created_by")
 
   @@map("profile")
 }
@@ -95,16 +96,50 @@ model Family {
 }
 
 model Invitation {
-  id       String @id @default(cuid())
-  family   Family @relation(fields: [familyId], references: [id])
-  familyId String
-
-  guest   Profile @relation("invitations", fields: [guestId], references: [id])
-  guestId String
-
+  id          String   @id @default(cuid())
+  family      Family   @relation(fields: [familyId], references: [id])
+  familyId    String
+  guest       Profile  @relation("invitations", fields: [guestId], references: [id])
+  guestId     String
   createdAt   DateTime @default(now())
   createdBy   Profile  @relation("created_by", fields: [createdById], references: [id])
   createdById String
 
   @@map("invitation")
+}
+
+model Task {
+  id          String        @id @default(cuid())
+  title       String
+  description String?
+  status      TaskStatus    @default(TODO)
+  priority    TaskPriority?
+  expiresAt   DateTime?
+  updatedAt   DateTime      @default(now()) @updatedAt
+  createdAt   DateTime      @default(now())
+  createdBy   Profile?      @relation(fields: [createdById], references: [id])
+  createdById String?
+  tasksList   TasksList?    @relation(fields: [tasksListId], references: [id])
+  tasksListId String?
+}
+
+enum TaskStatus {
+  TODO
+  DONE
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+model TasksList {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  tasks       Task[]
+  createdAt   DateTime @default(now())
+  createdBy   Profile? @relation("created_by", fields: [createdById], references: [id])
+  createdById String?
 }
