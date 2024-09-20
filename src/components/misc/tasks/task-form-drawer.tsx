@@ -34,7 +34,7 @@ export default function TaskFormDrawer({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Drawer open={isOpen}>
+    <Drawer open={isOpen} onClose={() => setIsOpen(false)}>
       <DrawerTrigger asChild>{children(setIsOpen)}</DrawerTrigger>
       <DrawerContent className="h-screen">
         <ScrollArea className="h-screen top-0">
