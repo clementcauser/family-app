@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { APP_NAME } from "@/lib/constants/app";
+import { Toaster as Sonner } from "@/components/ui/sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={poppins.className} suppressHydrationWarning>
         {children}
         <Toaster />
+        <Sonner />
       </body>
     </html>
   );

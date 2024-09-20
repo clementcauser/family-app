@@ -12,20 +12,22 @@ import { checkIfProfileHasFamilyAction } from "@/lib/actions/families";
 export default async function Page() {
   return (
     <div className="max-w-5xl min-h-screen mx-auto px-6">
-      <Guard>
-        {(profileId) => (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <Suspense>
-              <InvitationsList profileId={profileId} />
-            </Suspense>
-            <Suspense fallback={"loading..."}>
-              <CreateFamilyCard>
-                <CreateFamilyForm profileId={profileId} />
-              </CreateFamilyCard>
-            </Suspense>
-          </div>
-        )}
-      </Guard>
+      <Suspense>
+        <Guard>
+          {(profileId) => (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <Suspense>
+                <InvitationsList profileId={profileId} />
+              </Suspense>
+              <Suspense fallback={"loading..."}>
+                <CreateFamilyCard>
+                  <CreateFamilyForm profileId={profileId} />
+                </CreateFamilyCard>
+              </Suspense>
+            </div>
+          )}
+        </Guard>
+      </Suspense>
     </div>
   );
 }
@@ -38,10 +40,14 @@ async function Guard({ children }: GuardProps) {
   const session = await auth();
 
   if (session?.user.id) {
-    const hasFamily = await checkIfProfileHasFamilyAction(session.user.id);
+    const response = await checkIfProfileHasFamilyAction({
+      profileId: session.user.id,
+    });
+
+    const hasFamily = response?.data;
 
     if (hasFamily) {
-      redirect(ROUTES.root);
+      redirect(ROUTES.home);
     } else {
       return <>{children(session.user.id)}</>;
     }

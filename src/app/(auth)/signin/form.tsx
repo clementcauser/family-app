@@ -63,6 +63,7 @@ export function SignuInForm() {
               <FormControl>
                 <Input
                   type="email"
+                  autoFocus
                   placeholder="harry.potter@email.com"
                   {...field}
                 />

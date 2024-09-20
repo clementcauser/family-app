@@ -18,7 +18,7 @@ export const signInWithCredentialsAction = safeActionClient
       });
       await signIn("credentials", {
         ...parsedInput,
-        redirectTo: families.length > 0 ? ROUTES.root : ROUTES.invitations,
+        redirectTo: families.length > 0 ? ROUTES.home : ROUTES.invitations,
       });
     } catch (error) {
       if (error instanceof AuthError) {

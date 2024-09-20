@@ -28,7 +28,7 @@ function AcceptInvitationButton(props: AcceptInvitationButtonProps) {
           description: "Vous faites maintenant parti(e) de la famille !",
         });
 
-        push(ROUTES.root);
+        push(ROUTES.home);
       },
       onError() {
         toast({

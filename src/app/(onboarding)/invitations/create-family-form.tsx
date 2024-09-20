@@ -42,7 +42,7 @@ export default function CreateFamilyForm({ profileId }: Props) {
         title: "Félicitations 🎉",
         description: "Votre famille a été créée avec succès !",
       });
-      push(ROUTES.root);
+      push(ROUTES.home);
     },
     onError({ error }) {
       toast({

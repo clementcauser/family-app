@@ -8,11 +8,8 @@ import {
 import ROUTES from "@/lib/constants/routes";
 import Link from "next/link";
 import { SignuInForm } from "./form";
-import { auth } from "@/auth";
 
 export default async function Page() {
-  const session = await auth();
-  console.log("🚀 ~ Page ~ session:", session);
   return (
     <main className="px-6">
       <Card className="w-full max-w-lg m-auto">
